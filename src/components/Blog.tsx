@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 
 const Blog = () => {
@@ -114,9 +115,12 @@ const Blog = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg">
+          <Link 
+            to="/blog"
+            className="inline-block bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg"
+          >
             View All Articles
-          </button>
+          </Link>
         </div>
       </div>
     </section>
