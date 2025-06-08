@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
 
 const Hero = () => {
@@ -34,10 +35,13 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-all duration-200 font-bold text-lg flex items-center justify-center group">
+              <Link 
+                to="/free-audit"
+                className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-all duration-200 font-bold text-lg flex items-center justify-center group"
+              >
                 Get Free Marketing Audit
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+              </Link>
               <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-all duration-200 font-semibold">
                 View Case Studies
               </button>
