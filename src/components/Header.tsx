@@ -22,6 +22,7 @@ const Header = () => {
   const navItems = [
     { name: 'Services', href: '/services' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Free Audit', href: '/free-audit' },
     { name: 'Blog', href: '/blog' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
@@ -67,9 +68,12 @@ const Header = () => {
                 <Phone size={16} className="mr-1" />
                 <span className="text-sm">Call Now</span>
               </a>
-              <button className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+              <Link 
+                to="/free-audit"
+                className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold"
+              >
                 Free Audit
-              </button>
+              </Link>
             </div>
           </nav>
 
@@ -115,9 +119,13 @@ const Header = () => {
                 </a>
                   <ThemeToggle />
                 </div>
-                <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold w-full">
+                <Link 
+                  to="/free-audit"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold w-full text-center block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Get Free Audit
-                </button>
+                </Link>
               </div>
             </div>
           </nav>

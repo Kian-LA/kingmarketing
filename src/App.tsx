@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
 import ServicesPage from './pages/ServicesPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
+import FreeAuditPage from './pages/FreeAuditPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/free-audit" element={<FreeAuditPage />} />
           </Routes>
         </div>
       </Router>
