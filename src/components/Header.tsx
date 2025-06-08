@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,9 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Check if we're on a page that should have transparent header initially
+  const shouldStartTransparent = location.pathname === '/' || location.pathname === '/services';
 
   const navItems = [
     { name: 'Services', href: '/services' },
@@ -25,7 +29,7 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white dark:bg-gray-900 shadow-lg py-4' : 'bg-transparent py-6'
+      isScrolled ? 'bg-white dark:bg-gray-900 shadow-lg py-4' : shouldStartTransparent ? 'bg-transparent py-6' : 'bg-white dark:bg-gray-900 shadow-lg py-4'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
