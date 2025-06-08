@@ -1,6 +1,3 @@
-Here's the fixed version with all missing closing brackets added:
-
-```typescript
 import React, { useState } from 'react';
 import { CheckCircle, Search, Target, BarChart3, TrendingUp, Users, DollarSign, Clock, Star, ArrowRight, Download, Eye, Zap } from 'lucide-react';
 import Header from '../components/Header';
@@ -618,4 +615,74 @@ const FreeAuditPage = () => {
                   {component.items.map((item, idx) => (
                     <li key={idx} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:
+                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Why Get a Marketing Audit?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Most businesses are leaving money on the table without realizing it. Our audit reveals exactly where and how much.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {auditBenefits.map((benefit, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-8 h-8 text-red-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{benefit.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-red-600 to-orange-600">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Unlock Your Growth Potential?
+          </h2>
+          <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
+            Join hundreds of businesses that have discovered hidden opportunities worth thousands in additional revenue.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex items-center text-white">
+              <Star className="w-5 h-5 text-yellow-400 mr-1" />
+              <Star className="w-5 h-5 text-yellow-400 mr-1" />
+              <Star className="w-5 h-5 text-yellow-400 mr-1" />
+              <Star className="w-5 h-5 text-yellow-400 mr-1" />
+              <Star className="w-5 h-5 text-yellow-400 mr-2" />
+              <span className="text-sm">4.9/5 from 200+ audits</span>
+            </div>
+          </div>
+          <button
+            onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+            className="mt-8 px-8 py-4 bg-white text-red-600 rounded-lg hover:bg-gray-100 transition-colors font-bold text-lg flex items-center mx-auto"
+          >
+            Get Your Free Audit Now
+            <ArrowRight className="ml-2" size={20} />
+          </button>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default FreeAuditPage;
