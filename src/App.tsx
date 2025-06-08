@@ -18,6 +18,11 @@ import TeamPage from './pages/TeamPage';
 import CareersPage from './pages/CareersPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import MarketingGuidesPage from './pages/MarketingGuidesPage';
+import IndustryReportsPage from './pages/IndustryReportsPage';
+import WebinarsPage from './pages/WebinarsPage';
+import TemplatesPage from './pages/TemplatesPage';
+import ROICalculatorPage from './pages/ROICalculatorPage';
 
 function App() {
   return (
@@ -46,6 +51,11 @@ function App() {
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/resources/guides" element={<MarketingGuidesPage />} />
+            <Route path="/resources/reports" element={<IndustryReportsPage />} />
+            <Route path="/resources/webinars" element={<WebinarsPage />} />
+            <Route path="/resources/templates" element={<TemplatesPage />} />
+            <Route path="/resources/calculator" element={<ROICalculatorPage />} />
           </Routes>
         </div>
       </Router>
