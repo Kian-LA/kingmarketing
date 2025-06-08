@@ -660,7 +660,7 @@ const FreeAuditPage = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
                       <span className="text-gray-700 dark:text-gray-300">Page Load Speed</span>
-                      <span className="font-bold text-yellow-600">4.2s (Target: <2s)</span>
+                      <span className="font-bold text-yellow-600">4.2s (Target: &lt;2s)</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
                       <span className="text-gray-700 dark:text-gray-300">SEO Score</span>
