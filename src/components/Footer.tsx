@@ -1,37 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const footerLinks = {
     Services: [
-      'Search Engine Marketing',
-      'Social Media Advertising',
-      'Conversion Optimization',
-      'Brand Strategy',
-      'Email Marketing',
-      'Mobile Marketing'
+      { name: 'Search Engine Marketing', href: '/services#search-engine-marketing' },
+      { name: 'Social Media Advertising', href: '/services#social-media-advertising' },
+      { name: 'Conversion Optimization', href: '/services#conversion-optimization' },
+      { name: 'Brand Strategy', href: '/services#brand-strategy' },
+      { name: 'Email Marketing', href: '/services#email-marketing' },
+      { name: 'Mobile Marketing', href: '/services#mobile-marketing' }
     ],
     Company: [
-      'About Us',
-      'Our Team',
-      'Careers',
-      'Case Studies',
-      'Blog',
-      'Contact'
+      { name: 'About Us', href: '/about' },
+      { name: 'Our Team', href: '/team' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Contact', href: '#contact' }
     ],
     Resources: [
-      'Marketing Guides',
-      'Industry Reports',
-      'Webinars',
-      'Templates',
-      'ROI Calculator',
-      'Free Audit'
+      { name: 'Marketing Guides', href: '/resources/guides' },
+      { name: 'Industry Reports', href: '/resources/reports' },
+      { name: 'Webinars', href: '/resources/webinars' },
+      { name: 'Templates', href: '/resources/templates' },
+      { name: 'ROI Calculator', href: '/resources/calculator' },
+      { name: 'Free Audit', href: '/free-audit' }
     ],
     Legal: [
-      'Privacy Policy',
-      'Terms of Service',
-      'Cookie Policy',
-      'GDPR Compliance'
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Cookie Policy', href: '/cookies' },
+      { name: 'GDPR Compliance', href: '/gdpr' }
     ]
   };
 
@@ -96,12 +97,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
-                      className="text-gray-300 dark:text-gray-400 hover:text-red-500 transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        to={link.href}
+                        className="text-gray-300 dark:text-gray-400 hover:text-red-500 transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-gray-300 dark:text-gray-400 hover:text-red-500 transition-colors duration-200"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -114,9 +124,12 @@ const Footer = () => {
           <div className="bg-red-600 rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">Ready to Grow Your Business?</h3>
             <p className="text-red-100 mb-6">Get your free marketing audit and discover how to 10x your revenue.</p>
-            <button className="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold">
+            <Link 
+              to="/free-audit"
+              className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold"
+            >
               Get Free Audit Now
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -127,9 +140,9 @@ const Footer = () => {
               © 2024 KingMarketing. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Sitemap</a>
+              <Link to="/privacy" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Terms of Service</Link>
+              <Link to="/sitemap" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>

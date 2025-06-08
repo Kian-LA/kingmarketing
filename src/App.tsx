@@ -13,6 +13,11 @@ import BlogPage from './pages/BlogPage';
 import ServicesPage from './pages/ServicesPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import FreeAuditPage from './pages/FreeAuditPage';
+import AboutPage from './pages/AboutPage';
+import TeamPage from './pages/TeamPage';
+import CareersPage from './pages/CareersPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
             <Route path="/free-audit" element={<FreeAuditPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
           </Routes>
         </div>
       </Router>
