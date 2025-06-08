@@ -174,7 +174,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Navigation */}
-      <section className="py-8 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-20 z-40">
+      <section className="py-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 sticky top-20 z-40">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-4">
             {services.map((service) => (
