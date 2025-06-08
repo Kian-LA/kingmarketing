@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
 import ServicesPage from './pages/ServicesPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             } />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
           </Routes>
         </div>
       </Router>
