@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Target, BarChart3, Megaphone, Mail, Smartphone } from 'lucide-react';
 
 const Services = () => {
@@ -83,7 +84,9 @@ const Services = () => {
               </ul>
               
               <button className="w-full bg-gray-900 dark:bg-gray-700 text-white py-3 rounded-lg hover:bg-red-600 transition-colors duration-200 font-semibold">
-                Learn More
+                <Link to="/services" className="block w-full h-full">
+                  Learn More
+                </Link>
               </button>
             </div>
           ))}
@@ -91,9 +94,12 @@ const Services = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 dark:text-gray-300 mb-6">Ready to get started? Let's discuss your project.</p>
-          <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg">
-            Get Free Strategy Call
-          </button>
+          <Link 
+            to="/services"
+            className="inline-block bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg"
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>

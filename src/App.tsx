@@ -10,6 +10,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPage';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               </>
             } />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </div>
       </Router>
