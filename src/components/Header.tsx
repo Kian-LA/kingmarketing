@@ -39,7 +39,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              {item.href.startsWith('/') ? (
+              item.href.startsWith('/') ? (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -55,7 +55,7 @@ const Header = () => {
                 >
                   {item.name}
                 </a>
-              )}
+              )
             ))}
             <div className="flex items-center space-x-4 ml-8">
               <ThemeToggle />
@@ -83,7 +83,7 @@ const Header = () => {
           <nav className="md:hidden mt-4 pb-6 border-t border-gray-200 dark:border-gray-700">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
-                {item.href.startsWith('/') ? (
+                item.href.startsWith('/') ? (
                   <Link
                     key={item.name}
                     to={item.href}
@@ -101,7 +101,7 @@ const Header = () => {
                   >
                     {item.name}
                   </a>
-                )}
+                )
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
