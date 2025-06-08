@@ -240,20 +240,101 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {awards.map((award, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className={`w-16 h-16 ${award.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <award.icon className="w-8 h-8" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* The 2025 Brandie Awards */}
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/src/assets/awards/Brandies-Post-2025-Launch-1024x452.png.webp" 
+                    alt="The 2025 Brandie Awards"
+                    className="w-full h-32 object-contain mx-auto"
+                  />
                 </div>
-                <div className="text-center">
-                  <div className="text-sm font-semibold text-red-600 mb-1">{award.year}</div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">{award.title}</h3>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{award.organization}</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{award.description}</p>
-                </div>
+                <div className="text-sm font-semibold text-red-600 mb-2">2025</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The Brandie Awards</h3>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">IntelligenceBank</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Recognized for excellence in brand design, campaigns, rebrands, and brand management. The Brandies celebrate the brand work performed by marketing heroes worldwide – the innovators, ideators, and implementers who bring their brand to life.
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* The Effie Awards */}
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/src/assets/awards/Effie-Awards.png.webp" 
+                    alt="The Effie Awards"
+                    className="w-full h-32 object-contain mx-auto"
+                  />
+                </div>
+                <div className="text-sm font-semibold text-red-600 mb-2">2024</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The Effie Awards</h3>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Effie Worldwide</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Honored for effective marketing campaigns that achieve exceptional results. The Effie Awards inspire and champion the practice of marketing effectiveness globally, believing that if it's not effective marketing, it isn't marketing at all.
+                </p>
+              </div>
+            </div>
+
+            {/* MarCom Awards */}
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/src/assets/awards/marcom-awards.png.webp" 
+                    alt="MarCom Awards"
+                    className="w-full h-32 object-contain mx-auto"
+                  />
+                </div>
+                <div className="text-sm font-semibold text-red-600 mb-2">2024</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">MarCom Awards</h3>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Association of Marketing and Communications Professionals</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Recognized for excellence in marketing and communication while celebrating the creativity, hard work, and generosity of industry professionals. Administered by AMCP to honor outstanding marketing achievements.
+                </p>
+              </div>
+            </div>
+
+            {/* Digiday Awards */}
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/src/assets/awards/Digiday-Awards.png.webp" 
+                    alt="Digiday Awards"
+                    className="w-full h-32 object-contain mx-auto"
+                  />
+                </div>
+                <div className="text-sm font-semibold text-red-600 mb-2">2023</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">Digiday Awards</h3>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Digiday Media</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Awarded for outstanding digital marketing and media work. The Digiday Awards recognize the most successful brands and agencies around the globe for their award-winning digital marketing campaigns and innovative media strategies.
+                </p>
+              </div>
+            </div>
+
+            {/* The w3 Awards */}
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+              <div className="text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/src/assets/awards/W3-Awards.png.webp" 
+                    alt="The w3 Awards"
+                    className="w-full h-32 object-contain mx-auto"
+                  />
+                </div>
+                <div className="text-sm font-semibold text-red-600 mb-2">2023</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight">The w3 Awards</h3>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Academy of Interactive and Visual Arts</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Celebrated for digital excellence across websites, marketing, video, mobile sites & apps, social, podcasts, and emerging tech. The w3 Awards honor the unsung heroes of digital creativity who create imaginative and boundary-blazing work.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Awards Summary */}
@@ -267,7 +348,7 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-red-600 mb-1">8+</div>
+                  <div className="text-3xl font-bold text-red-600 mb-1">5+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">Industry Awards</div>
                 </div>
                 <div className="text-center">
@@ -276,11 +357,11 @@ const AboutPage = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-red-600 mb-1">#1</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">ROI Performance</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Digital Excellence</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-red-600 mb-1">98%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">Client Satisfaction</div>
+                  <div className="text-3xl font-bold text-red-600 mb-1">100%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Award Winning</div>
                 </div>
               </div>
             </div>
