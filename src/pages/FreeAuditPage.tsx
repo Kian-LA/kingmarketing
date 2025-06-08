@@ -175,8 +175,8 @@ const FreeAuditPage = () => {
               </div>
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <Star className="w-8 h-8 text-red-600 mx-auto mb-4" />
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">$2,500 Value</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Comprehensive analysis normally worth $2,500 - completely free</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">$5,500 Value</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Comprehensive analysis normally worth $5,500 - completely free</p>
               </div>
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <Eye className="w-8 h-8 text-red-600 mx-auto mb-4" />
@@ -197,7 +197,7 @@ const FreeAuditPage = () => {
                 Tell Us About Your Business
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                The more details you provide, the more personalized and valuable your audit will be.
+                No credit card required • 48-hour delivery • $5,500 value
               </p>
               
               {/* Progress Bar */}
