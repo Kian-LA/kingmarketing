@@ -24,7 +24,7 @@ const Header = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Free Audit', href: '/free-audit' },
     { name: 'Blog', href: '/blog' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '#contact' },
   ];
 
