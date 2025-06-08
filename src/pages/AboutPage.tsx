@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Target, Award, TrendingUp, Heart, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Users, Target, Award, TrendingUp, Heart, Zap, CheckCircle, ArrowRight, Trophy, Star, Medal } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -32,6 +32,73 @@ const AboutPage = () => {
     { number: '$50M+', label: 'Revenue Generated' },
     { number: '98%', label: 'Client Satisfaction' },
     { number: '5+', label: 'Years Experience' }
+  ];
+
+  const awards = [
+    {
+      icon: Trophy,
+      title: 'Best Digital Marketing Agency 2024',
+      organization: 'Marketing Excellence Awards',
+      year: '2024',
+      description: 'Recognized for outstanding performance and client satisfaction across all digital marketing channels.',
+      color: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600'
+    },
+    {
+      icon: Star,
+      title: 'Top ROI Performance Agency',
+      organization: 'Digital Marketing Institute',
+      year: '2024',
+      description: 'Awarded for consistently delivering the highest return on investment for client campaigns.',
+      color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600'
+    },
+    {
+      icon: Medal,
+      title: 'Innovation in Marketing Technology',
+      organization: 'AdTech Innovation Awards',
+      year: '2023',
+      description: 'Honored for developing cutting-edge marketing automation and analytics solutions.',
+      color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600'
+    },
+    {
+      icon: Award,
+      title: 'Client Satisfaction Excellence',
+      organization: 'Business Review Awards',
+      year: '2023',
+      description: 'Achieved 98% client satisfaction rating, the highest in the digital marketing industry.',
+      color: 'bg-green-100 dark:bg-green-900/30 text-green-600'
+    },
+    {
+      icon: Trophy,
+      title: 'Fastest Growing Marketing Agency',
+      organization: 'Inc. 5000',
+      year: '2023',
+      description: 'Listed among the fastest-growing private companies in America for exceptional growth.',
+      color: 'bg-red-100 dark:bg-red-900/30 text-red-600'
+    },
+    {
+      icon: Star,
+      title: 'Best PPC Campaign Management',
+      organization: 'Search Engine Marketing Awards',
+      year: '2022',
+      description: 'Recognized for managing the most successful PPC campaigns with industry-leading ROAS.',
+      color: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600'
+    },
+    {
+      icon: Medal,
+      title: 'Excellence in Social Media Marketing',
+      organization: 'Social Media Marketing Society',
+      year: '2022',
+      description: 'Awarded for creating viral social media campaigns that drove exceptional engagement.',
+      color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600'
+    },
+    {
+      icon: Award,
+      title: 'Outstanding SEO Performance',
+      organization: 'Search Marketing Awards',
+      year: '2022',
+      description: 'Achieved #1 rankings for 95% of target keywords across all client campaigns.',
+      color: 'bg-teal-100 dark:bg-teal-900/30 text-teal-600'
+    }
   ];
 
   const milestones = [
@@ -157,6 +224,66 @@ const AboutPage = () => {
                 <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Awards & Recognition
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Our commitment to excellence has been recognized by leading industry organizations and publications.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {awards.map((award, index) => (
+              <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className={`w-16 h-16 ${award.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <award.icon className="w-8 h-8" />
+                </div>
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-red-600 mb-1">{award.year}</div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">{award.title}</h3>
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{award.organization}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{award.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Awards Summary */}
+          <div className="mt-16 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-xl p-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Industry Recognition
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                These awards reflect our team's dedication to delivering exceptional results and pushing the boundaries of what's possible in digital marketing.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-600 mb-1">8+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Industry Awards</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-600 mb-1">3</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Years Running</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-600 mb-1">#1</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">ROI Performance</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-red-600 mb-1">98%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
