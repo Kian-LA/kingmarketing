@@ -12,6 +12,7 @@ const Testimonials = () => {
       image: 'https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=400',
       rating: 5,
       text: "KingMarketing completely transformed our business. We went from struggling to get leads to having more qualified prospects than we can handle. Their team is incredible!",
+      text: "Logical Marketing completely transformed our business. We went from struggling to get leads to having more qualified prospects than we can handle. Their team is incredible!",
       results: '340% increase in conversions'
     },
     {
@@ -21,6 +22,7 @@ const Testimonials = () => {
       image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400',
       rating: 5,
       text: "The ROI we've seen from working with KingMarketing is unbelievable. They helped us scale from $100K to over $1M monthly revenue in just 8 months.",
+      text: "The ROI we've seen from working with Logical Marketing is unbelievable. They helped us scale from $100K to over $1M monthly revenue in just 8 months.",
       results: '$1.2M monthly revenue achieved'
     },
     {
@@ -29,6 +31,7 @@ const Testimonials = () => {
       company: 'MedCare Plus',
       image: 'https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg?auto=compress&cs=tinysrgb&w=400',
       rating: 5,
+      text: "Professional, results-driven, and always available when we need them. Our patient bookings have increased by 280% since we started working together.",
       text: "Professional, results-driven, and always available when we need them. Our patient bookings have increased by 280% since we started working together.",
       results: '280% more patient bookings'
     },
@@ -39,6 +42,7 @@ const Testimonials = () => {
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400',
       rating: 5,
       text: "KingMarketing doesn't just run ads - they understand our business and create strategies that actually work. Best marketing investment we've ever made.",
+      text: "Logical Marketing doesn't just run ads - they understand our business and create strategies that actually work. Best marketing investment we've ever made.",
       results: '5x return on ad spend'
     },
   ];

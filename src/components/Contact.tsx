@@ -197,6 +197,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h4>
                   <p className="text-gray-600 dark:text-gray-300">hello@kingmarketing.com</p>
+                  <p className="text-gray-600 dark:text-gray-300">hello@logicalmarketing.com</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">We'll respond within 24 hours</p>
                 </div>
               </div>

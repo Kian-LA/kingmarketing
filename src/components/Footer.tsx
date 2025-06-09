@@ -51,9 +51,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">K</span>
+                <span className="text-white font-bold text-lg">L</span>
               </div>
-              <span className="text-2xl font-bold">KingMarketing</span>
+              <span className="text-2xl font-bold">Logical Marketing</span>
             </div>
             
             <p className="text-gray-300 dark:text-gray-400 mb-6 leading-relaxed">
@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-red-500" />
-                <span className="text-gray-300 dark:text-gray-400">hello@kingmarketing.com</span>
+                <span className="text-gray-300 dark:text-gray-400">hello@logicalmarketing.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-red-500" />
@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 dark:border-gray-800 pt-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 dark:text-gray-500 text-sm">
-              © 2024 KingMarketing. All rights reserved.
+              © 2024 Logical Marketing. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Privacy Policy</Link>

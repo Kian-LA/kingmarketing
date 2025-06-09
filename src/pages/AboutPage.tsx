@@ -143,7 +143,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center px-4 py-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-sm font-semibold mb-6">
-              About KingMarketing
+              About Logical Marketing
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               We Help Businesses
@@ -344,7 +344,7 @@ const AboutPage = () => {
                 Industry Recognition
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-                These awards reflect our team's dedication to delivering exceptional results and pushing the boundaries of what's possible in digital marketing.
+                Logical Marketing was born from a simple observation: too many great businesses were struggling to reach their full potential because of ineffective marketing. We saw companies with amazing products and services that couldn't break through the noise of today's crowded digital landscape.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center">
