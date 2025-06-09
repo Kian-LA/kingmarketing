@@ -79,6 +79,44 @@ const Hero = () => {
               ))}
             </div>
 
+            {/* Workflow Automation Visual */}
+            <div className="mt-8 relative">
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 p-8 rounded-2xl">
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  {/* Trigger */}
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">Trigger</div>
+                  </div>
+                  
+                  {/* Arrow */}
+                  <div className="flex justify-center">
+                    <svg className="w-8 h-8 text-red-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                  
+                  {/* Action */}
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">Action</div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <div className="text-lg font-bold text-gray-900 dark:text-white mb-2">Automated Marketing Workflows</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Set triggers → Execute actions → Drive results</div>
+                </div>
+              </div>
+            </div>
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 w-20 h-20 bg-red-600 rounded-full opacity-10 animate-pulse"></div>
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-500 rounded-full opacity-5 animate-pulse delay-1000"></div>
