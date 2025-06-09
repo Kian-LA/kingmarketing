@@ -14,7 +14,7 @@ const TeamPage = () => {
       social: {
         linkedin: '#',
         twitter: '#',
-        email: 'sarah@kingmarketing.com'
+        email: 'sarah@logicalmarketing.com'
       }
     },
     {
@@ -26,7 +26,7 @@ const TeamPage = () => {
       social: {
         linkedin: '#',
         twitter: '#',
-        email: 'michael@kingmarketing.com'
+        email: 'michael@logicalmarketing.com'
       }
     },
     {
@@ -38,7 +38,7 @@ const TeamPage = () => {
       social: {
         linkedin: '#',
         twitter: '#',
-        email: 'amanda@kingmarketing.com'
+        email: 'amanda@logicalmarketing.com'
       }
     }
   ];

@@ -38,7 +38,7 @@ const CaseStudiesPage = () => {
         { month: 'Month 7-8', task: 'Scale & Optimization', status: 'completed' }
       ],
       testimonial: {
-        text: "KingMarketing completely transformed our business. We went from struggling to get leads to having more qualified prospects than we can handle. Their team is incredible!",
+        text: "Logical Marketing completely transformed our business. We went from struggling to get leads to having more qualified prospects than we can handle. Their team is incredible!",
         author: "Sarah Johnson",
         position: "CEO, TechStart Pro"
       },
@@ -77,7 +77,7 @@ const CaseStudiesPage = () => {
         { month: 'Month 6', task: 'Advanced Automation', status: 'completed' }
       ],
       testimonial: {
-        text: "The ROI we've seen from working with KingMarketing is unbelievable. They helped us scale from $100K to over $1M monthly revenue in just 6 months.",
+        text: "The ROI we've seen from working with Logical Marketing is unbelievable. They helped us scale from $100K to over $1M monthly revenue in just 6 months.",
         author: "Michael Chen",
         position: "Founder, EcoShop"
       },
@@ -155,7 +155,7 @@ const CaseStudiesPage = () => {
         { month: 'Month 6-7', task: 'Retention Optimization', status: 'completed' }
       ],
       testimonial: {
-        text: "KingMarketing doesn't just run ads - they understand our business and create strategies that actually work. Best marketing investment we've ever made.",
+        text: "Logical Marketing doesn't just run ads - they understand our business and create strategies that actually work. Best marketing investment we've ever made.",
         author: "David Kim",
         position: "Owner, FitnessPro"
       },

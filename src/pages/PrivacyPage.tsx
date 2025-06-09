@@ -84,7 +84,7 @@ const PrivacyPage = () => {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Introduction</h2>
               <div className="prose prose-lg text-gray-600 dark:text-gray-300">
                 <p>
-                  KingMarketing ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                  Logical Marketing ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                 </p>
                 <p>
                   By using our website or services, you consent to the data practices described in this policy. If you do not agree with the practices described in this policy, please do not use our website or services.
@@ -185,7 +185,7 @@ const PrivacyPage = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-red-600" />
-                  <span className="text-gray-700 dark:text-gray-300">privacy@kingmarketing.com</span>
+                  <span className="text-gray-700 dark:text-gray-300">privacy@logicalmarketing.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-red-600" />

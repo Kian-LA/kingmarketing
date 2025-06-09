@@ -207,10 +207,11 @@ const TermsPage = () => {
             <div className="bg-red-50 dark:bg-red-900/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Questions About These Terms?</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                If you have any questions about these Terms of Service, please contact us:
+                To the maximum extent permitted by law, Logical Marketing shall not be liable for:
               </p>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 <p>Email: legal@kingmarketing.com</p>
+                <p>Email: legal@logicalmarketing.com</p>
                 <p>Phone: +1 (555) 123-4567</p>
                 <p>Address: 123 Business District, New York, NY 10001</p>
               </div>
