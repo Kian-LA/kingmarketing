@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -28,6 +29,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           <Routes>
             <Route path="/" element={
