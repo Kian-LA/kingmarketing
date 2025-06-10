@@ -1,5 +1,7 @@
 import React from 'react';
 import { Users, Target, Award, TrendingUp, Heart, Zap, CheckCircle, ArrowRight, Trophy, Star, Medal } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -136,6 +138,18 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="About Logical Marketing | Award-Winning Digital Marketing Agency"
+        description="Learn about Logical Marketing's mission, values, and award-winning team. We've helped 500+ businesses generate over $50M in additional revenue."
+        keywords="about logical marketing, digital marketing agency, marketing team, company history, awards, certifications"
+        url="https://logicalmarketing.com/about"
+      />
+      <SchemaMarkup 
+        type="organization" 
+        data={{
+          description: "Award-winning digital marketing agency with 500+ successful campaigns and $50M+ revenue generated for clients."
+        }} 
+      />
       <Header />
       
       {/* Hero Section */}

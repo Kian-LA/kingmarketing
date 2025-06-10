@@ -1,6 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SEOHead from './components/SEOHead';
+import SchemaMarkup from './components/SchemaMarkup';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -28,6 +30,9 @@ import ROICalculatorPage from './pages/ROICalculatorPage';
 function App() {
   return (
     <ThemeProvider>
+      <SEOHead />
+      <SchemaMarkup type="organization" data={{}} />
+      <SchemaMarkup type="website" data={{}} />
       <Router>
         <ScrollToTop />
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import SchemaMarkup from './SchemaMarkup';
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -64,6 +65,19 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-gray-900 text-white">
+      {testimonials.map((testimonial, index) => (
+        <SchemaMarkup 
+          key={index}
+          type="review" 
+          data={{
+            rating: testimonial.rating,
+            title: `Review by ${testimonial.name}`,
+            author: testimonial.name,
+            text: testimonial.text,
+            date: "2024-01-15"
+          }} 
+        />
+      ))}
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-red-600/20 text-red-400 rounded-full text-sm font-semibold mb-4">

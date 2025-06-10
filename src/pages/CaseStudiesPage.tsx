@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, TrendingUp, Users, DollarSign, Calendar, MapPin, Target, BarChart3, CheckCircle, Play, Pause, ChevronDown, ChevronUp } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -239,6 +241,22 @@ const CaseStudiesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="Marketing Case Studies | Real Results & Success Stories | Logical Marketing"
+        description="Discover how we've helped businesses achieve extraordinary growth. Real case studies with proven results including 340% conversion increases and $50M+ revenue generated."
+        keywords="marketing case studies, success stories, client results, ROI examples, conversion optimization results"
+        url="https://logicalmarketing.com/case-studies"
+      />
+      <SchemaMarkup 
+        type="article" 
+        data={{
+          headline: "Marketing Case Studies - Real Results for Real Businesses",
+          description: "Comprehensive case studies showing how we've helped businesses achieve extraordinary growth",
+          author: "Logical Marketing Team",
+          datePublished: "2024-01-15",
+          url: "https://logicalmarketing.com/case-studies"
+        }} 
+      />
       <Header />
       
       {/* Hero Section */}

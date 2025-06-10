@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, User, Clock, Search, Tag } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -109,6 +111,20 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="Marketing Blog | Expert Insights & Strategies | Logical Marketing"
+        description="Stay ahead with actionable marketing insights, proven strategies, and industry trends from our team of experts. Latest digital marketing tips and guides."
+        keywords="marketing blog, digital marketing insights, marketing strategies, SEO tips, PPC guides, social media marketing"
+        url="https://logicalmarketing.com/blog"
+        type="blog"
+      />
+      <SchemaMarkup 
+        type="website" 
+        data={{
+          name: "Logical Marketing Blog",
+          description: "Marketing insights and expert strategies"
+        }} 
+      />
       <Header />
       
       {/* Hero Section */}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle, Search, Target, BarChart3, TrendingUp, Users, DollarSign, Clock, Star, ArrowRight, Download, Eye, Zap } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -149,6 +151,25 @@ const FreeAuditPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="Free Marketing Audit | $5,500 Value | 48-Hour Delivery | Logical Marketing"
+        description="Get a comprehensive free marketing audit worth $5,500. Discover hidden opportunities and get a custom roadmap to 10x your growth. No obligations."
+        keywords="free marketing audit, marketing analysis, website audit, SEO audit, PPC audit, conversion audit"
+        url="https://logicalmarketing.com/free-audit"
+      />
+      <SchemaMarkup 
+        type="service" 
+        data={{
+          name: "Free Marketing Audit",
+          description: "Comprehensive marketing audit revealing hidden opportunities worth thousands in additional revenue",
+          offers: {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }} 
+      />
       <Header />
       
       {/* Hero Section */}

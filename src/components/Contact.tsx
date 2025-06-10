@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
+import SchemaMarkup from './SchemaMarkup';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +30,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-800">
+      <SchemaMarkup 
+        type="localBusiness" 
+        data={{
+          name: "Logical Marketing",
+          description: "Leading digital marketing agency helping businesses grow with data-driven strategies"
+        }} 
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-sm font-semibold mb-4">

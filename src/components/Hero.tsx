@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
+import SchemaMarkup from './SchemaMarkup';
 
 const Hero = () => {
   const clientLogos = [
@@ -15,6 +16,25 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 pt-20">
+      <SchemaMarkup 
+        type="organization" 
+        data={{
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            "name": "Digital Marketing Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Free Marketing Audit",
+                  "description": "Comprehensive marketing audit worth $5,500"
+                }
+              }
+            ]
+          }
+        }} 
+      />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

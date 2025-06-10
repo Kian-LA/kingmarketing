@@ -1,5 +1,7 @@
 import React from 'react';
 import { Linkedin as LinkedIn, Twitter, Mail, Award, Users, TrendingUp } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -90,6 +92,25 @@ const TeamPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="Our Expert Marketing Team | Meet the Professionals | Logical Marketing"
+        description="Meet our team of marketing experts with 50+ certifications and 15+ years combined experience. Led by CEO Sarah Johnson and industry specialists."
+        keywords="marketing team, digital marketing experts, marketing professionals, team members, marketing specialists"
+        url="https://logicalmarketing.com/team"
+      />
+      {leadership.map((leader, index) => (
+        <SchemaMarkup 
+          key={index}
+          type="person" 
+          data={{
+            name: leader.name,
+            jobTitle: leader.position,
+            description: leader.bio,
+            image: leader.image,
+            email: leader.social.email
+          }} 
+        />
+      ))}
       <Header />
       
       {/* Hero Section */}

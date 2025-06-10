@@ -1,5 +1,7 @@
 import React from 'react';
 import { Search, Target, BarChart3, Megaphone, Mail, Smartphone, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -153,6 +155,19 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <SEOHead 
+        title="Digital Marketing Services | SEO, PPC, Social Media | Logical Marketing"
+        description="Comprehensive digital marketing services including SEO, PPC, social media advertising, conversion optimization, and email marketing. Proven strategies that deliver results."
+        keywords="digital marketing services, SEO services, PPC management, social media advertising, conversion optimization, email marketing, brand strategy"
+        url="https://logicalmarketing.com/services"
+      />
+      <SchemaMarkup 
+        type="service" 
+        data={{
+          name: "Digital Marketing Services",
+          description: "Comprehensive digital marketing services designed to help your business grow, scale, and thrive in today's competitive landscape."
+        }} 
+      />
       <Header />
       
       {/* Hero Section */}
