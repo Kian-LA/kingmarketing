@@ -52,9 +52,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
       
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {publishedTime && <meta property="article:published_time\" content={publishedTime} />}
       {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-      {author && <meta property="article:author" content={author} />}
+      {author && <meta property="article:author\" content={author} />}
       {section && <meta property="article:section" content={section} />}
       {tags.map((tag, index) => (
         <meta key={index} property="article:tag" content={tag} />
