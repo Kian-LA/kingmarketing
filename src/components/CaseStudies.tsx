@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Users, DollarSign } from 'lucide-react';
 
 const CaseStudies = () => {
   const caseStudies = [
     {
+      id: 'techstart-pro',
       company: 'TechStart Pro',
       industry: 'SaaS',
       challenge: 'Low conversion rates and high customer acquisition costs',
@@ -16,6 +18,7 @@ const CaseStudies = () => {
       image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
+      id: 'ecoshop',
       company: 'EcoShop',
       industry: 'E-commerce',
       challenge: 'Struggling to scale beyond $100K monthly revenue',
@@ -28,6 +31,7 @@ const CaseStudies = () => {
       image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
+      id: 'medcare-plus',
       company: 'MedCare Plus',
       industry: 'Healthcare',
       challenge: 'Need to increase patient bookings and brand awareness',
@@ -103,10 +107,13 @@ const CaseStudies = () => {
                   ))}
                 </div>
 
-                <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold flex items-center">
+                <Link 
+                  to={`/case-studies?study=${study.id}`}
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold flex items-center"
+                >
                   View Full Case Study
                   <ArrowUpRight className="ml-2" size={16} />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

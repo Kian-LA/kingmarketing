@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Users, DollarSign, Calendar, MapPin, Target, BarChart3, CheckCircle, Play, Pause, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -9,6 +10,7 @@ const CaseStudiesPage = () => {
   const [selectedCase, setSelectedCase] = useState(0);
   const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({});
   const [animatedStats, setAnimatedStats] = useState<{[key: string]: number}>({});
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const caseStudies = [
     {
@@ -208,6 +210,17 @@ const CaseStudiesPage = () => {
     }
   ];
 
+  // Handle URL parameters to show specific case study
+  useEffect(() => {
+    const studyParam = searchParams.get('study');
+    if (studyParam) {
+      const caseIndex = caseStudies.findIndex(study => study.id === studyParam);
+      if (caseIndex !== -1) {
+        setSelectedCase(caseIndex);
+      }
+    }
+  }, [searchParams]);
+
   // Animate stats when component mounts or case study changes
   useEffect(() => {
     const currentCase = caseStudies[selectedCase];
@@ -284,7 +297,10 @@ const CaseStudiesPage = () => {
             {caseStudies.map((study, index) => (
               <button
                 key={study.id}
-                onClick={() => setSelectedCase(index)}
+                onClick={() => {
+                  setSelectedCase(index);
+                  setSearchParams({ study: study.id });
+                }}
                 className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
                   selectedCase === index
                     ? 'bg-red-600 text-white shadow-lg'
