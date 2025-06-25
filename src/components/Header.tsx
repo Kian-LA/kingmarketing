@@ -51,29 +51,13 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               item.href.startsWith('/') ? (
-                {user ? (
-                  <UserMenu />
-                ) : (
-                  <div className="space-y-3">
-                    <button
-                      onClick={() => {
-                        setAuthMode('signin');
-                        setShowAuthModal(true);
-                        setIsMenuOpen(false);
-                      }}
-                      className="w-full text-center py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
-                    >
-                      Sign In
-                    </button>
-                    <Link 
-                      to="/free-audit"
-                      className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold w-full text-center block"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Get Free Audit
-                    </Link>
-                  </div>
-                )}
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
               ) : (
                 <a
                   key={item.name}
@@ -136,12 +120,11 @@ const Header = () => {
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
                   <a href="tel:+1234567890" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-500">
-                  <Phone size={16} className="mr-2" />
-                  <span>Call Now</span>
-                </a>
+                    <Phone size={16} className="mr-2" />
+                    <span>Call Now</span>
+                  </a>
                   <ThemeToggle />
                 </div>
-                <Link 
                 {user ? (
                   <UserMenu />
                 ) : (
