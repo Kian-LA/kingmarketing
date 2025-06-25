@@ -125,27 +125,29 @@ const Header = () => {
                   </a>
                   <ThemeToggle />
                 </div>
-                {user ? (
-                  <UserMenu />
-                ) : (
-                  <div className="flex items-center space-x-3">
-                    <button
-                      onClick={() => {
-                        setAuthMode('signin');
-                        setShowAuthModal(true);
-                      }}
-                      className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
-                    >
-                      Sign In
-                    </button>
-                    <Link 
-                      to="/free-audit"
-                      className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold"
-                    >
-                      Free Audit
-                    </Link>
-                  </div>
-                )}
+                <>
+                  {user ? (
+                    <UserMenu />
+                  ) : (
+                    <div className="flex items-center space-x-3">
+                      <button
+                        onClick={() => {
+                          setAuthMode('signin');
+                          setShowAuthModal(true);
+                        }}
+                        className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
+                      >
+                        Sign In
+                      </button>
+                      <Link 
+                        to="/free-audit"
+                        className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold"
+                      >
+                        Free Audit
+                      </Link>
+                    </div>
+                  )}
+                </>
               </div>
             </div>
           </nav>
