@@ -6,6 +6,7 @@ const Blog = () => {
   const featuredPosts = [
     {
       id: 1,
+      slug: 'digital-marketing-trends-2024',
       title: '10 Digital Marketing Trends That Will Dominate 2024',
       excerpt: 'Stay ahead of the competition with these cutting-edge marketing strategies that are reshaping the industry.',
       author: 'Sarah Johnson',
@@ -17,6 +18,7 @@ const Blog = () => {
     },
     {
       id: 2,
+      slug: 'facebook-ads-roi-guide',
       title: 'How to Increase Your ROI by 300% with Facebook Ads',
       excerpt: 'Learn the exact strategies we use to help our clients achieve incredible returns on their Facebook advertising spend.',
       author: 'Michael Chen',
@@ -28,6 +30,7 @@ const Blog = () => {
     },
     {
       id: 3,
+      slug: 'conversion-rate-optimization-guide',
       title: 'The Complete Guide to Conversion Rate Optimization',
       excerpt: 'Transform your website into a conversion machine with these proven CRO techniques and best practices.',
       author: 'Dr. Amanda Rodriguez',
@@ -104,10 +107,13 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center text-red-600 font-semibold group-hover:text-red-700 transition-colors">
+                  <Link 
+                    to={`/blog/${post.slug}`}
+                    className="flex items-center text-red-600 font-semibold group-hover:text-red-700 transition-colors"
+                  >
                     <span>Read More</span>
                     <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </article>

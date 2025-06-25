@@ -32,6 +32,7 @@ import ROICalculatorPage from './pages/ROICalculatorPage';
 import LoginPage from './pages/auth/LoginPage';
 import SignupPage from './pages/auth/SignupPage';
 import DashboardPage from './pages/DashboardPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
               <Route path="/resources/webinars" element={<WebinarsPage />} />
               <Route path="/resources/templates" element={<TemplatesPage />} />
               <Route path="/resources/calculator" element={<ROICalculatorPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               
               {/* Auth Routes */}
               <Route path="/auth/login" element={
