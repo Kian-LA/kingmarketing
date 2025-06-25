@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin as LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 const Footer = () => {
+  const { user } = useAuth();
+
   const footerLinks = {
     Services: [
       { name: 'Search Engine Marketing', href: '/services#search-engine-marketing' },
@@ -139,10 +142,22 @@ const Footer = () => {
             <p className="text-gray-400 dark:text-gray-500 text-sm">
               © 2024 Logical Marketing. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Terms of Service</Link>
-              <Link to="/sitemap" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Sitemap</Link>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm">
+              <div className="flex space-x-6">
+                <Link to="/privacy" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Terms of Service</Link>
+                <Link to="/sitemap" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors">Sitemap</Link>
+              </div>
+              {!user && (
+                <div className="flex space-x-4 border-l border-gray-600 pl-6">
+                  <Link to="/auth/login" className="text-gray-400 dark:text-gray-500 hover:text-red-500 transition-colors font-medium">
+                    Sign In
+                  </Link>
+                  <Link to="/auth/signup" className="bg-red-600 text-white px-4 py-1 rounded-md hover:bg-red-700 transition-colors font-medium">
+                    Sign Up
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
