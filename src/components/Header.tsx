@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import UserMenu from './UserMenu';
+import AuthModal from './auth/AuthModal';
+import { useAuth } from '../contexts/AuthContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const location = useLocation();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +51,29 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               item.href.startsWith('/') ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </Link>
+                {user ? (
+                  <UserMenu />
+                ) : (
+                  <div className="space-y-3">
+                    <button
+                      onClick={() => {
+                        setAuthMode('signin');
+                        setShowAuthModal(true);
+                        setIsMenuOpen(false);
+                      }}
+                      className="w-full text-center py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
+                    >
+                      Sign In
+                    </button>
+                    <Link 
+                      to="/free-audit"
+                      className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold w-full text-center block"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Get Free Audit
+                    </Link>
+                  </div>
+                )}
               ) : (
                 <a
                   key={item.name}
@@ -120,17 +142,38 @@ const Header = () => {
                   <ThemeToggle />
                 </div>
                 <Link 
-                  to="/free-audit"
-                  className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold w-full text-center block"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Free Audit
-                </Link>
+                {user ? (
+                  <UserMenu />
+                ) : (
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => {
+                        setAuthMode('signin');
+                        setShowAuthModal(true);
+                      }}
+                      className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
+                    >
+                      Sign In
+                    </button>
+                    <Link 
+                      to="/free-audit"
+                      className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold"
+                    >
+                      Free Audit
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </nav>
         )}
       </div>
+      
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        defaultMode={authMode}
+      />
     </header>
   );
 };
