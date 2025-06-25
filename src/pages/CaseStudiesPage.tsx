@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Users, DollarSign, Calendar, MapPin, Target, BarChart3, CheckCircle, Play, Pause, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -488,9 +489,12 @@ const CaseStudiesPage = () => {
               Let's discuss how we can help you achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg flex items-center justify-center"
+              >
                 Schedule Your Free Consultation
-              </button>
+              </Link>
               <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-bold text-lg">
                 Download Case Study PDF
               </button>
