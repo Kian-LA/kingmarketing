@@ -285,10 +285,13 @@ const ServicesPage = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <a href="/#contact" className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold flex items-center justify-center">
-                      Get Started Today
+                  <Link 
+                    to="/free-audit"
+                    className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold flex items-center justify-center"
+                  >
+                    Get Started Today
                     <ArrowRight className="ml-2" size={16} />
-                  </a>
+                  </Link>
                   <a href="/free-audit" className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-semibold">
                     Learn More
                   </a>
