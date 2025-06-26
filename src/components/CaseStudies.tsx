@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Users, DollarSign } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -68,10 +69,14 @@ const CaseStudies = () => {
             }`}>
               <div className="lg:w-1/2">
                 <div className="relative">
-                  <img 
+                  <OptimizedImage
                     src={study.image} 
                     alt={study.company}
+                    width={800}
+                    height={320}
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    priority={index === 0}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
                 </div>

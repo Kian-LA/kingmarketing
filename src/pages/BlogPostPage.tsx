@@ -800,10 +800,14 @@ Ready to start optimizing your conversion rates? Our CRO experts can help you id
       <section className="py-8">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <img 
+            <OptimizedImage
               src={post.image} 
               alt={post.title}
+              width={1200}
+              height={400}
               className="w-full h-96 object-cover rounded-xl shadow-lg"
+              loading="eager"
+              priority={true}
             />
           </div>
         </div>
@@ -921,10 +925,16 @@ Ready to start optimizing your conversion rates? Our CRO experts can help you id
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
                     <h4 className="font-bold text-gray-900 dark:text-white mb-4">About the Author</h4>
                     <div className="flex items-center space-x-3 mb-4">
-                      <img 
+                      <OptimizedImage
                         src={post.authorImage} 
                         alt={post.author}
+                        width={48}
+                        height={48}
+                        width={40}
+                        height={40}
                         className="w-12 h-12 rounded-full object-cover"
+                        loading="lazy"
+                        loading="lazy"
                       />
                       <div>
                         <div className="font-semibold text-gray-900 dark:text-white">{post.author}</div>

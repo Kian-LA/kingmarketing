@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface SEOHeadProps {
   title?: string;
@@ -13,6 +14,8 @@ interface SEOHeadProps {
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+  noindex?: boolean;
+  canonical?: string;
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -26,10 +29,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   section,
-  tags = []
+  tags = [],
+  noindex = false,
+  canonical
 }) => {
   const siteName = "Logical Marketing";
   const twitterHandle = "@logicalmarketing";
+  const location = useLocation();
+  const currentUrl = canonical || `https://logicalmarketing.com${location.pathname}`;
 
   return (
     <Helmet>
@@ -38,16 +45,26 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="googlebot" content="index, follow" />
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={currentUrl} />
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://images.pexels.com" />
+      
+      {/* DNS prefetch for performance */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      <link rel="dns-prefetch" href="//images.pexels.com" />
 
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={title} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
@@ -89,6 +106,29 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="coverage" content="Worldwide" />
       <meta name="distribution" content="Global" />
       <meta name="rating" content="General" />
+      
+      {/* Structured Data for Organization */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": siteName,
+          "url": "https://logicalmarketing.com",
+          "logo": "https://logicalmarketing.com/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/logicalmarketing",
+            "https://www.twitter.com/logicalmarketing",
+            "https://www.linkedin.com/company/logicalmarketing",
+            "https://www.instagram.com/logicalmarketing"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "customer service",
+            "email": "hello@logicalmarketing.com"
+          }
+        })}
+      </script>
     </Helmet>
   );
 };

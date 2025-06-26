@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import UserMenu from './UserMenu';
 import AuthModal from './auth/AuthModal';
+import BreadcrumbNavigation from './BreadcrumbNavigation';
 import { useAuth } from '../contexts/AuthContext';
 
 const Header = () => {
@@ -161,6 +162,8 @@ const Header = () => {
         onClose={() => setShowAuthModal(false)}
         defaultMode={authMode}
       />
+      
+      <BreadcrumbNavigation />
     </header>
   );
 };

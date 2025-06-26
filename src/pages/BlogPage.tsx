@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, Search, Tag } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -195,10 +197,14 @@ const BlogPage = () => {
               <article key={post.id} className="group cursor-pointer">
                 <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                   <div className="relative">
-                    <img 
+                    <OptimizedImage
                       src={post.image} 
                       alt={post.title}
+                      width={800}
+                      height={192}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                      priority={index < 3}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
@@ -232,12 +238,15 @@ const BlogPage = () => {
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center text-red-600 font-semibold group-hover:text-red-700 transition-colors">
+                    <Link 
+                      to={`/blog/${post.slug}`}
+                      className="flex items-center text-red-600 font-semibold group-hover:text-red-700 transition-colors"
+                    >
                       <span>Read Article</span>
                       <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </article>

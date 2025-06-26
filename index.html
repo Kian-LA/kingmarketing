@@ -23,13 +23,35 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#E8222A">
+    <meta name="theme-color" content="#E8222A">
     
     <!-- Default meta tags (will be overridden by react-helmet-async) -->
     <title>Logical Marketing - Grow Your Business 10x Faster | Digital Marketing Agency</title>
     <meta name="description" content="Leading digital marketing agency helping businesses grow with data-driven strategies. Get 300% more conversions with our proven marketing systems. Free audit available.">
+    
+    <!-- Performance optimizations -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Structured Data for Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Logical Marketing",
+      "url": "https://logicalmarketing.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://logicalmarketing.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </body>
 </html>

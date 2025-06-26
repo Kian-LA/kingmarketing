@@ -4,6 +4,7 @@ import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import OptimizedImage from '../components/OptimizedImage';
 
 const TeamPage = () => {
   const leadership = [
@@ -164,10 +165,14 @@ const TeamPage = () => {
             {leadership.map((leader, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="relative">
-                  <img 
+                  <OptimizedImage
                     src={leader.image} 
                     alt={leader.name}
+                    width={400}
+                    height={256}
                     className="w-full h-64 object-cover"
+                    loading={index < 3 ? 'eager' : 'lazy'}
+                    priority={index < 3}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -221,10 +226,13 @@ const TeamPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                <img 
+                <OptimizedImage
                   src={member.image} 
                   alt={member.name}
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+                  loading="lazy"
                 />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{member.name}</h3>
                 <p className="text-red-600 font-semibold mb-4">{member.position}</p>

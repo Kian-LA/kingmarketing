@@ -68,6 +68,20 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "bestRating": "5",
             "worstRating": "1"
           },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Marketing Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Free Marketing Audit",
+                  "description": "Comprehensive marketing audit worth $5,500"
+                }
+              }
+            ]
+          },
           ...data
         };
 
@@ -86,6 +100,10 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "@type": "SearchAction",
             "target": "https://logicalmarketing.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
+          },
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Logical Marketing"
           },
           ...data
         };
@@ -130,6 +148,11 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               }
             ]
           },
+          "provider": {
+            "@type": "Organization",
+            "name": "Logical Marketing",
+            "url": "https://logicalmarketing.com"
+          },
           ...data
         };
 
@@ -158,6 +181,8 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "@type": "WebPage",
             "@id": data.url
           },
+          "wordCount": data.wordCount || 1500,
+          "articleSection": data.section || "Marketing",
           ...data
         };
 
@@ -175,6 +200,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
           "description": data.description,
           "email": data.email,
           "sameAs": data.socialLinks || [],
+          "knowsAbout": data.expertise || ["Digital Marketing", "SEO", "PPC", "Social Media Marketing"],
           ...data
         };
 
@@ -198,6 +224,10 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
           },
           "reviewBody": data.text,
           "datePublished": data.date,
+          "publisher": {
+            "@type": "Organization",
+            "name": "Logical Marketing"
+          },
           ...data
         };
 
@@ -213,6 +243,10 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               "text": q.answer
             }
           })),
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Logical Marketing"
+          },
           ...data
         };
 
@@ -226,6 +260,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "name": item.name,
             "item": item.url
           })),
+          "numberOfItems": data.items?.length || 0,
           ...data
         };
 
@@ -259,6 +294,8 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "ratingValue": "4.9",
             "reviewCount": "200"
           },
+          "paymentAccepted": "Cash, Credit Card, Invoice",
+          "currenciesAccepted": "USD",
           ...data
         };
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import SchemaMarkup from './SchemaMarkup';
+import OptimizedImage from './OptimizedImage';
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -120,10 +121,13 @@ const Testimonials = () => {
               </div>
 
               <div className="lg:w-1/3 flex justify-center lg:justify-end">
-                <img 
+                <OptimizedImage
                   src={testimonials[currentTestimonial].image} 
                   alt={testimonials[currentTestimonial].name}
+                  width={160}
+                  height={160}
                   className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-lg"
+                  loading="lazy"
                 />
               </div>
             </div>

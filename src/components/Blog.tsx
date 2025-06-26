@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 const Blog = () => {
   const featuredPosts = [
@@ -65,12 +66,16 @@ const Blog = () => {
             }`}>
               <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
                 <div className="relative">
-                  <img 
+                  <OptimizedImage
                     src={post.image} 
                     alt={post.title}
+                    width={800}
+                    height={index === 0 ? 320 : 192}
                     className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${
                       index === 0 ? 'h-64 lg:h-80' : 'h-48'
                     }`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    priority={index === 0}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
