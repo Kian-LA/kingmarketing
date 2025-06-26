@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle, ArrowRight, Users, TrendingUp, Star } from 'lucide-react';
+import { submitNewsletterSubscription } from '../lib/forms';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +11,28 @@ const Newsletter = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
+    try {
+      const { error } = await submitNewsletterSubscription(email);
+      
+      if (error) {
+        console.error('Error subscribing to newsletter:', error);
+        // Handle error
+      } else {
+        setIsSubscribed(true);
+        setEmail('');
+      }
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+    }
+    
+    setIsLoading(false);
+  };
+
+  const handleSubmitOld = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // Fallback simulation if needed
     setTimeout(() => {
       setIsSubscribed(true);
       setIsLoading(false);

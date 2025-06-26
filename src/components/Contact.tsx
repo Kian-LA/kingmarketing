@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import SchemaMarkup from './SchemaMarkup';
+import { submitContactForm, getClientInfo } from '../lib/forms';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,11 +16,30 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    
+    try {
+      const { error } = await submitContactForm({
+        email: formData.email,
+        firstName: formData.name.split(' ')[0],
+        lastName: formData.name.split(' ').slice(1).join(' '),
+        company: formData.company,
+        phone: formData.phone,
+        revenue: formData.revenue,
+        message: formData.message,
+      });
+
+      if (error) {
+        console.error('Error submitting form:', error);
+        // Handle error (show error message)
+      } else {
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
