@@ -4,6 +4,7 @@ import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { submitAuditForm } from '../lib/forms';
 
 const FreeAuditPage = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +27,37 @@ const FreeAuditPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    
+    try {
+      const { error } = await submitAuditForm({
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        company: formData.company,
+        website: formData.website,
+        phone: formData.phone,
+        industry: formData.industry,
+        monthlyRevenue: formData.monthlyRevenue,
+        marketingBudget: formData.marketingBudget,
+        primaryGoal: formData.primaryGoal,
+        currentChallenges: formData.currentChallenges,
+        currentMarketing: formData.currentMarketing,
+        timeframe: formData.timeframe,
+        hearAboutUs: formData.hearAboutUs,
+      });
+
+      if (error) {
+        console.error('Error submitting audit form:', error);
+        // Handle error
+      } else {
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting audit form:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -84,7 +84,7 @@ const Services = () => {
               </ul>
               
               <button className="w-full bg-gray-900 dark:bg-gray-700 text-white py-3 rounded-lg hover:bg-red-600 transition-colors duration-200 font-semibold">
-                <Link to="/services" className="block w-full h-full">
+                <Link to="/free-audit" className="block w-full h-full">
                   Learn More
                 </Link>
               </button>

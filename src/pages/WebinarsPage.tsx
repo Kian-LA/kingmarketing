@@ -344,12 +344,18 @@ const WebinarsPage = () => {
               Share your expertise with our community or request a custom training session for your team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg"
+              >
                 Propose a Topic
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-green-600 transition-colors duration-200 font-bold text-lg">
+              </Link>
+              <Link 
+                to="/free-audit"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-green-600 transition-colors duration-200 font-bold text-lg"
+              >
                 Request Custom Training
-              </button>
+              </Link>
             </div>
           </div>
         </div>

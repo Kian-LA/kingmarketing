@@ -313,12 +313,18 @@ const ServicesPage = () => {
               Let's discuss which services are right for your business and create a custom strategy that delivers results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg"
+              >
                 Get Free Strategy Call
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-red-600 transition-colors duration-200 font-bold text-lg">
+              </Link>
+              <Link 
+                to="/case-studies"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-red-600 transition-colors duration-200 font-bold text-lg"
+              >
                 View Case Studies
-              </button>
+              </Link>
             </div>
           </div>
         </div>

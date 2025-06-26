@@ -290,9 +290,12 @@ const TeamPage = () => {
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               We're always looking for talented marketing professionals who share our passion for delivering exceptional results.
             </p>
-            <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg">
+            <Link 
+              to="/careers"
+              className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold text-lg"
+            >
               View Open Positions
-            </button>
+            </Link>
           </div>
         </div>
       </section>

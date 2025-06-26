@@ -76,23 +76,21 @@ const UserMenu: React.FC = () => {
               <span>Dashboard</span>
             </Link>
             
-            <Link
-              to="/account/settings"
+            <button
               className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               <Settings size={18} />
               <span>Account Settings</span>
-            </Link>
+            </button>
             
-            <Link
-              to="/account/billing"
+            <button
               className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               <CreditCard size={18} />
               <span>Billing</span>
-            </Link>
+            </button>
           </div>
 
           <div className="border-t border-gray-200 dark:border-gray-700 py-2">

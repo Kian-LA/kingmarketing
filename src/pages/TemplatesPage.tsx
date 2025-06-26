@@ -321,12 +321,18 @@ const TemplatesPage = () => {
               Get custom templates designed specifically for your business needs and brand guidelines.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg"
+              >
                 Request Custom Templates
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-orange-600 transition-colors duration-200 font-bold text-lg">
+              </Link>
+              <Link 
+                to="/resources/templates"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-orange-600 transition-colors duration-200 font-bold text-lg"
+              >
                 View All Templates
-              </button>
+              </Link>
             </div>
           </div>
         </div>

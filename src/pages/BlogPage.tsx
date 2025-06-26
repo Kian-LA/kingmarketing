@@ -14,6 +14,7 @@ const BlogPage = () => {
   const blogPosts = [
     {
       id: 1,
+      slug: 'digital-marketing-trends-2024',
       title: '10 Digital Marketing Trends That Will Dominate 2024',
       excerpt: 'Stay ahead of the competition with these cutting-edge marketing strategies that are reshaping the industry. From AI-powered personalization to voice search optimization.',
       author: 'Sarah Johnson',
@@ -25,6 +26,7 @@ const BlogPage = () => {
     },
     {
       id: 2,
+      slug: 'facebook-ads-roi-guide',
       title: 'How to Increase Your ROI by 300% with Facebook Ads',
       excerpt: 'Learn the exact strategies we use to help our clients achieve incredible returns on their Facebook advertising spend. Includes real case studies and actionable tips.',
       author: 'Michael Chen',
@@ -36,6 +38,7 @@ const BlogPage = () => {
     },
     {
       id: 3,
+      slug: 'conversion-rate-optimization-guide',
       title: 'The Complete Guide to Conversion Rate Optimization',
       excerpt: 'Transform your website into a conversion machine with these proven CRO techniques and best practices. Step-by-step implementation guide included.',
       author: 'Dr. Amanda Rodriguez',
@@ -47,6 +50,7 @@ const BlogPage = () => {
     },
     {
       id: 4,
+      slug: 'seo-guide-2024',
       title: 'SEO in 2024: What Really Works Now',
       excerpt: 'Google\'s algorithm has evolved significantly. Here\'s what you need to know to rank higher and drive more organic traffic to your website.',
       author: 'David Kim',
@@ -58,6 +62,7 @@ const BlogPage = () => {
     },
     {
       id: 5,
+      slug: 'email-marketing-automation',
       title: 'Email Marketing Automation That Actually Converts',
       excerpt: 'Build email sequences that nurture leads and drive sales on autopilot. Includes templates and automation workflows that we use for our clients.',
       author: 'Lisa Wang',
@@ -69,6 +74,7 @@ const BlogPage = () => {
     },
     {
       id: 6,
+      slug: 'social-media-strategy',
       title: 'Social Media Strategy for B2B Companies',
       excerpt: 'How to leverage LinkedIn, Twitter, and other platforms to generate high-quality leads for your B2B business. Real examples and proven tactics.',
       author: 'James Rodriguez',
@@ -80,6 +86,7 @@ const BlogPage = () => {
     },
     {
       id: 7,
+      slug: 'landing-page-psychology',
       title: 'The Psychology of High-Converting Landing Pages',
       excerpt: 'Understand the psychological triggers that make visitors take action. Learn how to design landing pages that convert at 25%+ rates.',
       author: 'Dr. Amanda Rodriguez',
@@ -91,6 +98,7 @@ const BlogPage = () => {
     },
     {
       id: 8,
+      slug: 'google-ads-vs-facebook-ads',
       title: 'Google Ads vs Facebook Ads: Which is Better for Your Business?',
       excerpt: 'A comprehensive comparison of the two biggest advertising platforms. Learn which one to choose based on your business goals and target audience.',
       author: 'Michael Chen',

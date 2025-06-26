@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Calculator, TrendingUp, DollarSign, Target, BarChart3, ArrowRight, CheckCircle, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+import { submitROICalculator } from '../lib/forms';
 
 const ROICalculatorPage = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +26,8 @@ const ROICalculatorPage = () => {
   });
 
   const [showResults, setShowResults] = useState(false);
+  const [email, setEmail] = useState('');
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
 
   const industries = [
     'E-commerce', 'SaaS/Technology', 'Healthcare', 'Real Estate', 'Finance',
@@ -95,6 +99,38 @@ const ROICalculatorPage = () => {
     });
 
     setShowResults(true);
+  };
+
+  const handleSaveResults = async () => {
+    if (!email) {
+      setShowEmailCapture(true);
+      return;
+    }
+
+    try {
+      const { error } = await submitROICalculator(email, {
+        monthlyRevenue: parseFloat(formData.monthlyRevenue) || 0,
+        conversionRate: parseFloat(formData.conversionRate) || 0,
+        averageOrderValue: parseFloat(formData.averageOrderValue) || 0,
+        monthlyTraffic: parseFloat(formData.monthlyTraffic) || 0,
+        marketingBudget: parseFloat(formData.marketingBudget) || 0,
+        industry: formData.industry,
+        businessType: formData.businessType,
+        calculatedRoi: results.currentROI,
+        projectedRoi: results.projectedROI,
+        additionalRevenue: results.additionalRevenue,
+        paybackPeriod: results.paybackPeriod,
+      });
+
+      if (error) {
+        console.error('Error saving ROI calculation:', error);
+      } else {
+        alert('Results saved! We\'ll send you a detailed report.');
+        setShowEmailCapture(false);
+      }
+    } catch (error) {
+      console.error('Error saving ROI calculation:', error);
+    }
   };
 
   const resetCalculator = () => {
@@ -348,10 +384,47 @@ const ROICalculatorPage = () => {
                         </ul>
                       </div>
 
-                      <button className="w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold text-lg flex items-center justify-center">
-                        Get Your Custom Strategy
-                        <ArrowRight className="ml-2" size={20} />
-                      </button>
+                      {showEmailCapture ? (
+                        <div className="space-y-4">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter your email to save results"
+                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
+                          />
+                          <div className="flex gap-3">
+                            <button 
+                              onClick={handleSaveResults}
+                              className="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold"
+                            >
+                              Save Results
+                            </button>
+                            <button 
+                              onClick={() => setShowEmailCapture(false)}
+                              className="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          <button 
+                            onClick={handleSaveResults}
+                            className="w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold text-lg flex items-center justify-center"
+                          >
+                            Save Results & Get Strategy
+                            <ArrowRight className="ml-2" size={20} />
+                          </button>
+                          <Link 
+                            to="/free-audit"
+                            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold flex items-center justify-center"
+                          >
+                            Get Free Marketing Audit
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ) : (
@@ -398,12 +471,18 @@ const ROICalculatorPage = () => {
               Our expert team can help you implement the strategies needed to reach your ROI goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-white text-indigo-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg"
+              >
                 Get Free Strategy Session
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-indigo-600 transition-colors duration-200 font-bold text-lg">
+              </Link>
+              <Link 
+                to="/case-studies"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-indigo-600 transition-colors duration-200 font-bold text-lg"
+              >
                 View Case Studies
-              </button>
+              </Link>
             </div>
           </div>
         </div>

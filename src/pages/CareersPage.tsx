@@ -323,12 +323,18 @@ const CareersPage = () => {
               Don't see a position that fits? We're always interested in hearing from talented marketing professionals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/free-audit"
+                className="bg-white text-red-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-bold text-lg"
+              >
                 Send Us Your Resume
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-red-600 transition-colors duration-200 font-bold text-lg">
+              </Link>
+              <Link 
+                to="/about"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-red-600 transition-colors duration-200 font-bold text-lg"
+              >
                 Learn More About Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>

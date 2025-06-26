@@ -134,6 +134,7 @@ const Header = () => {
                         onClick={() => {
                           setAuthMode('signin');
                           setShowAuthModal(true);
+                          setIsMenuOpen(false);
                         }}
                         className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 font-medium"
                       >
@@ -142,6 +143,7 @@ const Header = () => {
                       <Link 
                         to="/free-audit"
                         className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold"
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         Free Audit
                       </Link>

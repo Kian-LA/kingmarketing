@@ -122,9 +122,12 @@ const CaseStudies = () => {
         <div className="text-center mt-16 p-8 bg-gray-50 dark:bg-gray-700 rounded-xl">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to Be Our Next Success Story?</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">Let's discuss how we can help you achieve similar results.</p>
-          <button className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold">
+          <Link 
+            to="/free-audit"
+            className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-bold"
+          >
             Schedule Your Free Consultation
-          </button>
+          </Link>
         </div>
       </div>
     </section>

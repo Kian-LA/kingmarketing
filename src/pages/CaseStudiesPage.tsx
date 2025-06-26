@@ -495,9 +495,12 @@ const CaseStudiesPage = () => {
               >
                 Schedule Your Free Consultation
               </Link>
-              <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-bold text-lg">
+              <Link 
+                to="/resources/reports"
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-colors duration-200 font-bold text-lg"
+              >
                 Download Case Study PDF
-              </button>
+              </Link>
             </div>
           </div>
         </div>
