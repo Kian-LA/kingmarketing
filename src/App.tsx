@@ -39,10 +39,10 @@ function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <SEOHead />
         <SchemaMarkup type="organization" data={{}} />
         <SchemaMarkup type="website" data={{}} />
         <Router>
+          <SEOHead />
           <ScrollToTop />
           <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
             <Routes>
