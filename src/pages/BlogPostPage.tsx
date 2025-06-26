@@ -998,5 +998,3 @@ Ready to start optimizing your conversion rates? Our CRO experts can help you id
 };
 
 export default BlogPostPage;
-
-export default BlogPostPage
