@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   publicDir: 'public',
+  resolve: {
+    alias: {
+      'react-mouseflow': path.resolve(__dirname, 'node_modules/react-mouseflow/dist/index.js')
+    }
+  },
   build: {
     rollupOptions: {
       output: {
@@ -18,6 +24,7 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    exclude: ['lucide-react', 'react-mouseflow'],
+    exclude: ['lucide-react'],
+    include: ['react-mouseflow']
   },
 });
