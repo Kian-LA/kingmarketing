@@ -1,4 +1,5 @@
 import React from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
