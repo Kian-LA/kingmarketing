@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { mouseflow } from 'react-mouseflow';
 import { useEffect } from 'react';
 import SEOHead from './components/SEOHead';
 import SchemaMarkup from './components/SchemaMarkup';
