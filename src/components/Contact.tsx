@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import SchemaMarkup from './SchemaMarkup';
@@ -15,6 +17,13 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Track contact form view
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('contact_form_view');
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +43,10 @@ const Contact = () => {
         console.error('Error submitting form:', error);
         // Handle error (show error message)
       } else {
+        // Track successful contact form submission
+        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+          mouseflow.track('contact_form_submitted');
+        }
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 5000);
       }

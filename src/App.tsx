@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { mouseflow} from ‘react-mouseflow’;
+import { mouseflow } from 'react-mouseflow';
+import { useEffect } from 'react';
 import SEOHead from './components/SEOHead';
 import SchemaMarkup from './components/SchemaMarkup';
 import ScrollToTop from './components/ScrollToTop';
@@ -37,6 +38,10 @@ import BlogPostPage from './pages/BlogPostPage';
 import SitemapPage from './pages/SitemapPage';
 
 function App() {
+  useEffect(() => {
+    mouseflow.initialize('46447932-4baf-47b2-8af4-0013c2aff20b');
+  }, []);
+
   return (
     <ThemeProvider>
       <AuthProvider>

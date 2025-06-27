@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { CheckCircle, Search, Target, BarChart3, TrendingUp, Users, DollarSign, Clock, Star, ArrowRight, Download, Eye, Zap } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -27,6 +29,13 @@ const FreeAuditPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
 
+  useEffect(() => {
+    // Track page view for audit form
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('audit_page_view');
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -52,6 +61,10 @@ const FreeAuditPage = () => {
         console.error('Error submitting audit form:', error);
         // Handle error
       } else {
+        // Track successful audit form submission
+        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+          mouseflow.track('audit_form_submitted');
+        }
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 5000);
       }

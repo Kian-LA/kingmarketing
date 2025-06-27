@@ -1,4 +1,6 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
 import SchemaMarkup from './SchemaMarkup';
@@ -13,6 +15,13 @@ const Hero = () => {
     { icon: Users, value: '500+', label: 'Campaigns' },
     { icon: Award, value: '#1', label: 'Agency 2024' },
   ];
+
+  useEffect(() => {
+    // Track hero section view
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('hero_section_view');
+    }
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 pt-20">
@@ -57,6 +66,11 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/free-audit"
+                onClick={() => {
+                  if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+                    mouseflow.track('hero_cta_clicked', { button: 'free_audit' });
+                  }
+                }}
                 className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-all duration-200 font-bold text-lg flex items-center justify-center group"
               >
                 Get Free Marketing Audit
@@ -64,6 +78,11 @@ const Hero = () => {
               </Link>
               <Link 
                 to="/case-studies"
+                onClick={() => {
+                  if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+                    mouseflow.track('hero_cta_clicked', { button: 'case_studies' });
+                  }
+                }}
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-all duration-200 font-semibold"
               >
                 View Case Studies

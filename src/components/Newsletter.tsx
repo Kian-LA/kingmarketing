@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { Mail, CheckCircle, ArrowRight, Users, TrendingUp, Star } from 'lucide-react';
 import { submitNewsletterSubscription } from '../lib/forms';
 
@@ -6,6 +8,13 @@ const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Track newsletter section view
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('newsletter_section_view');
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,6 +27,10 @@ const Newsletter = () => {
         console.error('Error subscribing to newsletter:', error);
         // Handle error
       } else {
+        // Track successful newsletter subscription
+        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+          mouseflow.track('newsletter_subscribed');
+        }
         setIsSubscribed(true);
         setEmail('');
       }

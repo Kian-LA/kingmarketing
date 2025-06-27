@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { mouseflow } from 'react-mouseflow';
 import { Calculator, TrendingUp, DollarSign, Target, BarChart3, ArrowRight, CheckCircle, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -28,6 +29,13 @@ const ROICalculatorPage = () => {
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState('');
   const [showEmailCapture, setShowEmailCapture] = useState(false);
+
+  useEffect(() => {
+    // Track ROI calculator page view
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('roi_calculator_view');
+    }
+  }, []);
 
   const industries = [
     'E-commerce', 'SaaS/Technology', 'Healthcare', 'Real Estate', 'Finance',
@@ -99,6 +107,15 @@ const ROICalculatorPage = () => {
     });
 
     setShowResults(true);
+    
+    // Track ROI calculation
+    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+      mouseflow.track('roi_calculated', {
+        industry: formData.industry,
+        businessType: formData.businessType,
+        projectedROI: projectedROI
+      });
+    }
   };
 
   const handleSaveResults = async () => {
@@ -125,6 +142,10 @@ const ROICalculatorPage = () => {
       if (error) {
         console.error('Error saving ROI calculation:', error);
       } else {
+        // Track ROI results saved
+        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
+          mouseflow.track('roi_results_saved');
+        }
         alert('Results saved! We\'ll send you a detailed report.');
         setShowEmailCapture(false);
       }
