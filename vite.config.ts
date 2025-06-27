@@ -6,11 +6,6 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   publicDir: 'public',
-  resolve: {
-    alias: {
-      'react-mouseflow': path.resolve(__dirname, 'node_modules/react-mouseflow/dist/index.js')
-    }
-  },
   build: {
     rollupOptions: {
       output: {
