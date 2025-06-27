@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+
+export default defineConfig({
   publicDir: 'public',
   build: {
     rollupOptions: {
@@ -16,4 +18,5 @@ import react from '@vitejs/plugin-react';
   optimizeDeps: {
     exclude: ['lucide-react'],
     include: ['react-mouseflow']
+  }
 });
