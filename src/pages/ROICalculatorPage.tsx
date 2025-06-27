@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { Calculator, TrendingUp, DollarSign, Target, BarChart3, ArrowRight, CheckCircle, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -32,8 +31,8 @@ const ROICalculatorPage = () => {
 
   useEffect(() => {
     // Track ROI calculator page view
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('roi_calculator_view');
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'roi_calculator_view']);
     }
   }, []);
 
@@ -109,12 +108,12 @@ const ROICalculatorPage = () => {
     setShowResults(true);
     
     // Track ROI calculation
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('roi_calculated', {
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'roi_calculated', {
         industry: formData.industry,
         businessType: formData.businessType,
         projectedROI: projectedROI
-      });
+      }]);
     }
   };
 
@@ -143,8 +142,8 @@ const ROICalculatorPage = () => {
         console.error('Error saving ROI calculation:', error);
       } else {
         // Track ROI results saved
-        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-          mouseflow.track('roi_results_saved');
+        if (typeof window !== 'undefined' && window._mfq) {
+          window._mfq.push(['track', 'roi_results_saved']);
         }
         alert('Results saved! We\'ll send you a detailed report.');
         setShowEmailCapture(false);

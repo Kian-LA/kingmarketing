@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { Mail, CheckCircle, ArrowRight, Users, TrendingUp, Star } from 'lucide-react';
 import { submitNewsletterSubscription } from '../lib/forms';
 
@@ -11,8 +10,8 @@ const Newsletter = () => {
 
   useEffect(() => {
     // Track newsletter section view
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('newsletter_section_view');
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'newsletter_section_view']);
     }
   }, []);
 
@@ -28,8 +27,8 @@ const Newsletter = () => {
         // Handle error
       } else {
         // Track successful newsletter subscription
-        if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-          mouseflow.track('newsletter_subscribed');
+        if (typeof window !== 'undefined' && window._mfq) {
+          window._mfq.push(['track', 'newsletter_subscribed']);
         }
         setIsSubscribed(true);
         setEmail('');

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { Search, Target, BarChart3, Megaphone, Mail, Smartphone, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -10,8 +9,8 @@ import Footer from '../components/Footer';
 const ServicesPage = () => {
   useEffect(() => {
     // Track services page view
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('services_page_view');
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'services_page_view']);
     }
   }, []);
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -39,7 +38,16 @@ import SitemapPage from './pages/SitemapPage';
 
 function App() {
   useEffect(() => {
-    mouseflow.initialize('46447932-4baf-47b2-8af4-0013c2aff20b');
+    // Initialize Mouseflow directly via script
+    if (typeof window !== 'undefined') {
+      window._mfq = window._mfq || [];
+      (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.defer = true;
+        mf.src = "//cdn.mouseflow.com/projects/46447932-4baf-47b2-8af4-0013c2aff20b.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+      })();
+    }
   }, []);
 
   return (

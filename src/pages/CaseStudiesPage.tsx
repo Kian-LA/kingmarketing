@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Users, DollarSign, Calendar, MapPin, Target, BarChart3, CheckCircle, Play, Pause, ChevronDown, ChevronUp } from 'lucide-react';
@@ -215,8 +214,8 @@ const CaseStudiesPage = () => {
   // Handle URL parameters to show specific case study
   useEffect(() => {
     // Track case studies page view
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('case_studies_page_view');
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'case_studies_page_view']);
     }
     
     const studyParam = searchParams.get('study');
@@ -308,8 +307,8 @@ const CaseStudiesPage = () => {
                   setSelectedCase(index);
                   setSearchParams({ study: study.id });
                   // Track case study selection
-                  if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-                    mouseflow.track('case_study_selected', { study: study.company });
+                  if (typeof window !== 'undefined' && window._mfq) {
+                    window._mfq.push(['track', 'case_study_selected', { study: study.company }]);
                   }
                 }}
                 className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${

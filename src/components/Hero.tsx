@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { mouseflow } from 'react-mouseflow';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
 import SchemaMarkup from './SchemaMarkup';
@@ -18,8 +17,8 @@ const Hero = () => {
 
   useEffect(() => {
     // Track hero section view
-    if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-      mouseflow.track('hero_section_view');
+    if (typeof window !== 'undefined' && window._mfq) {
+      window._mfq.push(['track', 'hero_section_view']);
     }
   }, []);
 
@@ -67,8 +66,8 @@ const Hero = () => {
               <Link 
                 to="/free-audit"
                 onClick={() => {
-                  if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-                    mouseflow.track('hero_cta_clicked', { button: 'free_audit' });
+                  if (typeof window !== 'undefined' && window._mfq) {
+                    window._mfq.push(['track', 'hero_cta_clicked', { button: 'free_audit' }]);
                   }
                 }}
                 className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition-all duration-200 font-bold text-lg flex items-center justify-center group"
@@ -79,8 +78,8 @@ const Hero = () => {
               <Link 
                 to="/case-studies"
                 onClick={() => {
-                  if (typeof mouseflow !== 'undefined' && mouseflow.track) {
-                    mouseflow.track('hero_cta_clicked', { button: 'case_studies' });
+                  if (typeof window !== 'undefined' && window._mfq) {
+                    window._mfq.push(['track', 'hero_cta_clicked', { button: 'case_studies' }]);
                   }
                 }}
                 className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg hover:border-red-600 hover:text-red-600 dark:hover:text-red-500 transition-all duration-200 font-semibold"
