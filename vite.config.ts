@@ -16,7 +16,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    exclude: ['lucide-react'],
-    include: ['react-mouseflow']
+    exclude: ['lucide-react', 'react-mouseflow']
   }
 });
