@@ -86,21 +86,6 @@ const Hero = () => {
           </div>
 
           <div className="relative">
-            {/* Compact Stats */}
-            <div className="grid grid-cols-3 gap-3 mb-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <stat.icon className="w-4 h-4 text-red-600" />
-                    </div>
-                    <div className="text-xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-300 font-medium">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             {/* Advanced Workflow Automation Visual */}
             <div className="relative">
               <div className="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/40 dark:from-gray-800 dark:via-blue-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-blue-100/50 dark:border-blue-800/30 shadow-xl backdrop-blur-sm">
